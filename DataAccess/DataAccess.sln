@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{36B13E00-A547-4D52-91C4-865761F1BE58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CentricaStoresApi", "CentricaStoresApi\CentricaStoresApi.csproj", "{2E1F28E1-EE76-485A-AC5C-53B938A8C236}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36B13E00-A547-4D52-91C4-865761F1BE58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36B13E00-A547-4D52-91C4-865761F1BE58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36B13E00-A547-4D52-91C4-865761F1BE58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36B13E00-A547-4D52-91C4-865761F1BE58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E1F28E1-EE76-485A-AC5C-53B938A8C236}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E1F28E1-EE76-485A-AC5C-53B938A8C236}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E1F28E1-EE76-485A-AC5C-53B938A8C236}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E1F28E1-EE76-485A-AC5C-53B938A8C236}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {958F7322-04A8-487F-B830-8BCC7533AC13}
+	EndGlobalSection
+EndGlobal

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CentricaStoresApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d962968d59121e8ec25e57575cf080cb6caa079")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("CentricaStoresApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CentricaStoresApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

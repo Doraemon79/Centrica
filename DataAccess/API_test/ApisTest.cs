@@ -96,8 +96,7 @@ public class ApisTest
         var result = await controller.InsertSalePerson(districtPerson);
 
         //Assert
-        var createdResult = Assert.IsType<CreatedAtActionResult>(result.Result);
-        createdResult.StatusCode.Should().Be(201);
+        var createdResult = Assert.IsType<CreatedResult>(result.Result);
     }
 
     [Fact]

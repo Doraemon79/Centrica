@@ -55,7 +55,7 @@ public class SalePersonController : ControllerBase
      try
         {
             await _districtRepo.InsertSalePerson(districtSalePerson.name, districtSalePerson.districtname);
-            return CreatedAtAction(districtSalePerson.name, districtSalePerson.districtname);
+            return Created();
         }
         catch(Exception ex)
         {

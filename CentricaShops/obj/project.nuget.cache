@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "e/yyDr8GTQScu/c6LvgFBjGfU4QiR352BesJeLKpGmCK5ejBgTvb2N8mDGo3mqsiYsY/SBGEXfB8p3AmgmhHyg==",
+  "dgSpecHash": "ZSapIScsbSZ4MN5oDvxJtz3fScsEiAAP78jJOlVZZ6LDKZ1BTCc0kEWCWY5HVs7YkTGuL8B5bUdm5VpOGHmoAA==",
   "success": true,
-  "projectFilePath": "C:\\Repos\\Centrica_Test\\CentricaShops\\CentricaShops.csproj",
+  "projectFilePath": "C:\\Repos\\Centrica\\CentricaShops\\CentricaShops.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ignle\\.nuget\\packages\\microsoft.aspnet.webapi.client\\6.0.0\\microsoft.aspnet.webapi.client.6.0.0.nupkg.sha512",
     "C:\\Users\\ignle\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",

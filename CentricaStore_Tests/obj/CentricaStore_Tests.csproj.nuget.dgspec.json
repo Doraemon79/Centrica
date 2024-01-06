@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Repos\\Centrica_Test\\CentricaStore_Tests\\CentricaStore_Tests.csproj": {}
+    "C:\\Repos\\Centrica\\CentricaStore_Tests\\CentricaStore_Tests.csproj": {}
   },
   "projects": {
-    "C:\\Repos\\Centrica_Test\\CentricaShops\\CentricaShops.csproj": {
+    "C:\\Repos\\Centrica\\CentricaShops\\CentricaShops.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repos\\Centrica_Test\\CentricaShops\\CentricaShops.csproj",
+        "projectUniqueName": "C:\\Repos\\Centrica\\CentricaShops\\CentricaShops.csproj",
         "projectName": "CentricaShops",
-        "projectPath": "C:\\Repos\\Centrica_Test\\CentricaShops\\CentricaShops.csproj",
+        "projectPath": "C:\\Repos\\Centrica\\CentricaShops\\CentricaShops.csproj",
         "packagesPath": "C:\\Users\\ignle\\.nuget\\packages\\",
-        "outputPath": "C:\\Repos\\Centrica_Test\\CentricaShops\\obj\\",
+        "outputPath": "C:\\Repos\\Centrica\\CentricaShops\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -85,14 +85,14 @@
         }
       }
     },
-    "C:\\Repos\\Centrica_Test\\CentricaStore_Tests\\CentricaStore_Tests.csproj": {
+    "C:\\Repos\\Centrica\\CentricaStore_Tests\\CentricaStore_Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repos\\Centrica_Test\\CentricaStore_Tests\\CentricaStore_Tests.csproj",
+        "projectUniqueName": "C:\\Repos\\Centrica\\CentricaStore_Tests\\CentricaStore_Tests.csproj",
         "projectName": "CentricaStore_Tests",
-        "projectPath": "C:\\Repos\\Centrica_Test\\CentricaStore_Tests\\CentricaStore_Tests.csproj",
+        "projectPath": "C:\\Repos\\Centrica\\CentricaStore_Tests\\CentricaStore_Tests.csproj",
         "packagesPath": "C:\\Users\\ignle\\.nuget\\packages\\",
-        "outputPath": "C:\\Repos\\Centrica_Test\\CentricaStore_Tests\\obj\\",
+        "outputPath": "C:\\Repos\\Centrica\\CentricaStore_Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -114,8 +114,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows7.0",
             "projectReferences": {
-              "C:\\Repos\\Centrica_Test\\CentricaShops\\CentricaShops.csproj": {
-                "projectPath": "C:\\Repos\\Centrica_Test\\CentricaShops\\CentricaShops.csproj"
+              "C:\\Repos\\Centrica\\CentricaShops\\CentricaShops.csproj": {
+                "projectPath": "C:\\Repos\\Centrica\\CentricaShops\\CentricaShops.csproj"
               }
             }
           }

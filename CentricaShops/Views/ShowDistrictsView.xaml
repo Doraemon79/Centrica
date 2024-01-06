@@ -4,8 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CentricaShops.Views" xmlns:viewmodels="clr-namespace:CentricaShops.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:ShowDistrictViewModel}"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d" Height="488" Width="801">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="221*"/>

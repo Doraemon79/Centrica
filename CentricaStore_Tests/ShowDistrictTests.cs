@@ -2,6 +2,7 @@ using CentricaShops.Models;
 using CentricaShops.ViewModels;
 using OpenQA.Selenium.Appium.Windows;
 using System.Collections.ObjectModel;
+using System.Windows.Automation;
 using System.Windows.Controls;
 
 namespace CentricaStore_Tests
@@ -56,6 +57,22 @@ namespace CentricaStore_Tests
         //}
 
         [Fact]
+        public void TestMessage()
+        {
+            listView = session.FindElementByAccessibilityId(@"DistrictsListView");
+
+
+            listView.SendKeys("Test6");
+            var elements = session.FindElementByClassName("ListView").FindElementsByClassName("ListViewItem"); //ListViewItem
+            var firstelement = elements.First();
+            var tstgrid = listView.FindElementsByClassName(@"ListViewItem");
+            UserMessage
+
+            button = session.FindElementByAccessibilityId("bRefresh");
+
+        }
+
+            [Fact]
         public void TestUI()
         {
             listView = session.FindElementByAccessibilityId(@"DistrictsListView");

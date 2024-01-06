@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Repos\\Centrica_Test\\DataAccess\\DataAccess\\DataAccess.csproj": {}
+    "C:\\Repos\\Centrica\\DataAccess\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Repos\\Centrica_Test\\DataAccess\\DataAccess\\DataAccess.csproj": {
+    "C:\\Repos\\Centrica\\DataAccess\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repos\\Centrica_Test\\DataAccess\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Repos\\Centrica\\DataAccess\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Repos\\Centrica_Test\\DataAccess\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Repos\\Centrica\\DataAccess\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\ignle\\.nuget\\packages\\",
-        "outputPath": "C:\\Repos\\Centrica_Test\\DataAccess\\DataAccess\\obj\\",
+        "outputPath": "C:\\Repos\\Centrica\\DataAccess\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

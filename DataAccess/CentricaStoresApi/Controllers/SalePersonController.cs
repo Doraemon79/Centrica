@@ -19,7 +19,7 @@ public class SalePersonController : ControllerBase
     }
 
     [HttpGet("GetAll")]
-    public async Task<IActionResult> GetAll()
+    public async Task<ActionResult<string>> GetAll()
     {
         var _list = await _districtRepo.GetAll();
         if (_list != null)
@@ -34,7 +34,7 @@ public class SalePersonController : ControllerBase
 
     [HttpGet("GetDetailsByDistrict/{district}")]
     [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetDetailsByDistrict([FromRoute] string district)
+    public async Task<ActionResult<string>> GetDetailsByDistrict([FromRoute] string district)
     {
         var _list = await _districtRepo.GetDetailsByDistrict( district);
         if (_list != null)
@@ -48,14 +48,14 @@ public class SalePersonController : ControllerBase
     }
 
     [HttpPost("InsertSalePerson")]
-    [ProducesResponseType(  StatusCodes.Status200OK)]
-    public async Task<IActionResult> InsertSalePerson([FromBody] DistrictSalePerson districtSalePerson)
+    [ProducesResponseType(  StatusCodes.Status201Created)]
+    public async Task<ActionResult<string>> InsertSalePerson([FromBody] DistrictSalePerson districtSalePerson)
     {
 
      try
         {
             await _districtRepo.InsertSalePerson(districtSalePerson.name, districtSalePerson.districtname);
-            return Ok();
+            return CreatedAtAction(districtSalePerson.name, districtSalePerson.districtname);
         }
         catch(Exception ex)
         {
@@ -65,14 +65,14 @@ public class SalePersonController : ControllerBase
     }
 
     [HttpPut("UpdateSalePerson")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<IActionResult> UpdateSalePerson([FromBody] DistrictSalePerson districtSalePerson)
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    public async Task<ActionResult<string>> UpdateSalePerson([FromBody] DistrictSalePerson districtSalePerson)
     {
 
         try
         {
             await _districtRepo.UpdateSalePerson(districtSalePerson.name, districtSalePerson.districtname);
-            return Ok();
+            return  NoContent();
         }
         catch (Exception ex)
         {
@@ -83,7 +83,7 @@ public class SalePersonController : ControllerBase
 
     [HttpDelete("DeleteSalePerson/{districtname}/{name}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<IActionResult> DeleteInsertSalePerson([FromRoute] DistrictSalePerson districtSalePerson)
+    public async Task<ActionResult> DeleteSalePerson([FromRoute] DistrictSalePerson districtSalePerson)
     {
 
         try

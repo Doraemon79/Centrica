@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qpD1nJ86rCQvn0VS194q3HcC6QwRx6yufuBTOKRkQrB94qcH6/DAln8LgMwkE6FWKA3kYkAcSXKupelz1xMQXw==",
+  "dgSpecHash": "TlSmBJ9t1Soi0uiinjujAWF6p0wizw4GnmbwGHIq0HpPqG9twxD5IU5IgsTnuj8ggvT++AD5dOUCdO/XVESBfw==",
   "success": true,
-  "projectFilePath": "C:\\Repos\\Centrica_Test\\DataAccess\\CentricaStoresApi\\CentricaStoresApi.csproj",
+  "projectFilePath": "C:\\Repos\\Centrica\\DataAccess\\CentricaStoresApi\\CentricaStoresApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ignle\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\ignle\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

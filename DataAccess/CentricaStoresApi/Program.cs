@@ -1,4 +1,5 @@
 
+using CentricaStoresApi.BudsinessLogic;
 using CentricaStoresApi.Data;
 using DataAccess.DbAccess;
 
@@ -9,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddTransient<CentricaDbContext>();
+builder.Services.AddSingleton<IResultChecker,ResultChecker>();
 builder.Services.AddSingleton<IDistrictsRepo,DistrictsRepo>();
 builder.Services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

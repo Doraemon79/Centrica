@@ -46,15 +46,15 @@ namespace CentricaShops.Command
 
         public async override void Execute(object? parameter)
         {
-
             var person = new DistrictAndSalePerson { name = _showDistrictViewModel.SalepersonToAdd, districtname = _showDistrictViewModel.SelectedDistrictTest };
 
-            var httpClient = _httpClientFactory.CreateClient();
+            var httpClient = _httpClientFactory.CreateClient("CentricaAPI");
             var todoItemJson = new StringContent(JsonSerializer.Serialize(person),
             Encoding.UTF8,
             "application/json");
-            using var httpResponse =
-                await httpClient.PutAsync(localHost, todoItemJson);
+
+            var httpResponse = await httpClient.PutAsync($"/api/SalePerson/Update/{_showDistrictViewModel.SalepersonToAdd}/{_showDistrictViewModel.SelectedDistrictTest}", todoItemJson);
+
 
             var result = await httpResponse.Content.ReadAsStringAsync();
             if (httpResponse.IsSuccessStatusCode)
@@ -64,7 +64,7 @@ namespace CentricaShops.Command
             }
             else
             {
-                throw new ConnectionException("Connection to" + localHost + " host failed", httpResponse.StatusCode.ToString());
+                throw new ConnectionException($"Connection to {httpResponse.Headers} host failed", httpResponse.StatusCode.ToString());
             }
         }
     }

@@ -17,11 +17,13 @@ C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Azure.Core.dll
 C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Azure.Identity.dll
 C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Castle.Core.dll
 C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Dapper.dll
+C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\FluentAssertions.dll
 C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\System.Net.Http.Formatting.dll
 C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\System.Web.Http.dll
 C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
 C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Microsoft.Identity.Client.dll
 C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
 C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
@@ -44,6 +46,15 @@ C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Moq.dll
 C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
 C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\NuGet.Frameworks.dll
+C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Serilog.dll
+C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Serilog.Sinks.File.dll
 C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -152,4 +163,3 @@ C:\Repos\Centrica\DataAccess\API_test\obj\Debug\net8.0\refint\API_test.dll
 C:\Repos\Centrica\DataAccess\API_test\obj\Debug\net8.0\API_test.pdb
 C:\Repos\Centrica\DataAccess\API_test\obj\Debug\net8.0\API_test.genruntimeconfig.cache
 C:\Repos\Centrica\DataAccess\API_test\obj\Debug\net8.0\ref\API_test.dll
-C:\Repos\Centrica\DataAccess\API_test\bin\Debug\net8.0\FluentAssertions.dll

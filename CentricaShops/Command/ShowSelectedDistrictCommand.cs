@@ -4,6 +4,8 @@ using CentricaShops.ViewModels;
 using System;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Text;
+using System.Text.Json;
 
 namespace CentricaShops.Command
 {
@@ -12,7 +14,6 @@ namespace CentricaShops.Command
         private readonly ShowDistrictViewModel _showDistrictViewModel;
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly GeneralDistrict _generalDistrict;
-        string localHost = "https://localhost:7235/api/SalePerson/GetDetailsByDistrict";
 
         public ShowSelectedDistrictCommand(ShowDistrictViewModel showDistrictViewModel, IHttpClientFactory clientFactory, GeneralDistrict generalDistrict)
         {
@@ -22,19 +23,19 @@ namespace CentricaShops.Command
         }
         public async override void Execute(object? parameter)
         {
-            IEnumerable<string> result;
-            var httpClient = _httpClientFactory.CreateClient();
-            using var httpResponse =
-                await httpClient.GetAsync($"{localHost}/{_showDistrictViewModel.SelectedDistrictTest}");
+            var httpClient = _httpClientFactory.CreateClient("CentricaAPI");
+
+            var httpResponse = await httpClient.GetAsync($"api/Saleperson/Districts/{_showDistrictViewModel.SelectedDistrictTest}");
+
             if (httpResponse.IsSuccessStatusCode)
             {
-                var tst = httpResponse.Content.ReadFromJsonAsync<IEnumerable<StoreSalePerson>>().Result.ToArray();
-                _showDistrictViewModel.GetDetails(tst);
+                var response = httpResponse.Content.ReadFromJsonAsync<IEnumerable<StoreSalePerson>>().Result.ToArray();
+                _showDistrictViewModel.GetDetails(response);
 
             }
             else
             {
-                throw new ConnectionException("Connection to" + localHost + " host failed", httpResponse.StatusCode.ToString());
+                throw new ConnectionException("Connection to {httpResponse.Headers}  host failed", httpResponse.StatusCode.ToString());
             }
         }
     }

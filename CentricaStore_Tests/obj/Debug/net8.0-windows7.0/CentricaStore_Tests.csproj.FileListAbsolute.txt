@@ -280,3 +280,4 @@ C:\Repos\Centrica\CentricaStore_Tests\obj\Debug\net8.0-windows7.0\refint\Centric
 C:\Repos\Centrica\CentricaStore_Tests\obj\Debug\net8.0-windows7.0\CentricaStore_Tests.pdb
 C:\Repos\Centrica\CentricaStore_Tests\obj\Debug\net8.0-windows7.0\CentricaStore_Tests.genruntimeconfig.cache
 C:\Repos\Centrica\CentricaStore_Tests\obj\Debug\net8.0-windows7.0\ref\CentricaStore_Tests.dll
+C:\Repos\Centrica\CentricaStore_Tests\bin\Debug\net8.0-windows7.0\Moq.dll

@@ -14,7 +14,6 @@ namespace CentricaShops.Command
         private readonly ShowDistrictViewModel _showDistrictViewModel;
         private readonly GeneralDistrict _generalDistrict;
         private readonly IHttpClientFactory _httpClientFactory;
-        string localHost = "https://localhost:7235/api/SalePerson/InsertSalePerson";
 
         public AddCommand(ShowDistrictViewModel showDistrictViewModel, IHttpClientFactory clientFactory, GeneralDistrict generalDistrict)
         {
@@ -45,21 +44,20 @@ namespace CentricaShops.Command
         {
             var person = new DistrictAndSalePerson { name = _showDistrictViewModel.SalepersonToAdd, districtname = _showDistrictViewModel.SelectedDistrictTest };
 
-            var httpClient = _httpClientFactory.CreateClient();
+            var httpClient = _httpClientFactory.CreateClient("CentricaAPI");
             var todoItemJson = new StringContent(JsonSerializer.Serialize(person),
             Encoding.UTF8,
             "application/json");
-            using var httpResponse =
-                await httpClient.PostAsync(localHost, todoItemJson);
 
-            var result = await httpResponse.Content.ReadAsStringAsync();
+            var httpResponse = await httpClient.PostAsync($"/api/SalePerson/SalePerson/{_showDistrictViewModel.SelectedDistrictTest}/{_showDistrictViewModel.SalepersonToAdd}", todoItemJson);
+
             if (httpResponse.IsSuccessStatusCode)
             {
                 _showDistrictViewModel.InsertPerson_Secondary("The secondary saleperson has been added");
             }
             else
             {
-                _showDistrictViewModel.UserMessage= $"Connection to" + localHost + " host failed"+ httpResponse.StatusCode.ToString();
+                _showDistrictViewModel.UserMessage= $"Connection to {httpResponse.Headers} host failed"+ httpResponse.StatusCode.ToString();
             }
         }
     }

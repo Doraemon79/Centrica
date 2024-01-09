@@ -1,0 +1,124 @@
+2024-01-07 21:43:26.702 +01:00  INF  Now listening on: https://localhost:7235
+2024-01-07 21:43:26.735 +01:00  INF  Now listening on: http://localhost:5005
+2024-01-07 21:43:26.739 +01:00  INF  Application started. Press Ctrl+C to shut down.
+2024-01-07 21:43:26.741 +01:00  INF  Hosting environment: Development
+2024-01-07 21:43:26.743 +01:00  INF  Content root path: C:\Repos\Centrica\DataAccess\CentricaStoresApi
+2024-01-07 21:43:34.106 +01:00  INF  Request starting HTTP/2 GET https://localhost:7235/swagger/index.html - null null
+2024-01-07 21:43:34.753 +01:00  INF  Request finished HTTP/2 GET https://localhost:7235/swagger/index.html - 200 null text/html;charset=utf-8 659.6204ms
+2024-01-07 21:43:34.765 +01:00  INF  Request starting HTTP/2 GET https://localhost:7235/_framework/aspnetcore-browser-refresh.js - null null
+2024-01-07 21:43:34.791 +01:00  INF  Request finished HTTP/2 GET https://localhost:7235/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 25.5097ms
+2024-01-07 21:43:34.804 +01:00  INF  Request starting HTTP/2 GET https://localhost:7235/_vs/browserLink - null null
+2024-01-07 21:43:35.059 +01:00  INF  Request finished HTTP/2 GET https://localhost:7235/_vs/browserLink - 200 null text/javascript; charset=UTF-8 254.8754ms
+2024-01-07 21:43:35.148 +01:00  INF  Request starting HTTP/2 GET https://localhost:7235/swagger/v1/swagger.json - null null
+2024-01-07 21:43:35.521 +01:00  INF  Request finished HTTP/2 GET https://localhost:7235/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 372.8777ms
+2024-01-07 21:43:40.198 +01:00  INF  Request starting HTTP/2 GET https://localhost:7235/api/SalePerson/GetAll - null null
+2024-01-07 21:43:40.236 +01:00  INF  Executing endpoint 'CentricaStoresApi.Controllers.SalePersonController.GetAll (CentricaStoresApi)'
+2024-01-07 21:43:40.311 +01:00  INF  Route matched with {action = "GetAll", controller = "SalePerson"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] GetAll() on controller CentricaStoresApi.Controllers.SalePersonController (CentricaStoresApi).
+2024-01-07 21:43:40.323 +01:00  INF  GetAll started
+2024-01-07 21:43:41.720 +01:00  INF  Executed action CentricaStoresApi.Controllers.SalePersonController.GetAll (CentricaStoresApi) in 1398.6267ms
+2024-01-07 21:43:41.725 +01:00  INF  Executed endpoint 'CentricaStoresApi.Controllers.SalePersonController.GetAll (CentricaStoresApi)'
+2024-01-07 21:43:41.740 +01:00  ERR  An unhandled exception has occurred while executing the request.Microsoft.Data.SqlClient.SqlException (0x80131904): Snapshot isolation transaction failed accessing database 'CentricaDb_Relational' because snapshot isolation is not allowed in this database. Use ALTER DATABASE to allow snapshot isolation.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 452
+   at DataAccess.DbAccess.SqlDataAccess.LoadData[T,U](String storedProcedure, U parameters, String connectionId) in C:\Repos\Centrica\DataAccess\DataAccess\DbAccess\SqlDataAccess.cs:line 29
+   at CentricaStoresApi.Data.DistrictsRepo.GetAll() in C:\Repos\Centrica\DataAccess\CentricaStoresApi\Data\DistrictsRepo.cs:line 21
+   at CentricaStoresApi.Controllers.SalePersonController.GetAll() in C:\Repos\Centrica\DataAccess\CentricaStoresApi\Controllers\SalePersonController.cs:line 29
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:22cd7af2-4d05-4b37-9315-c8825bd2a170
+Error Number:3952,State:1,Class:16
+
+2024-01-07 21:43:41.833 +01:00  INF  Request finished HTTP/2 GET https://localhost:7235/api/SalePerson/GetAll - 500 null text/plain; charset=utf-8 1635.5575ms
+2024-01-07 21:46:39.435 +01:00  INF  Now listening on: https://localhost:7235
+2024-01-07 21:46:39.525 +01:00  INF  Now listening on: http://localhost:5005
+2024-01-07 21:46:39.541 +01:00  INF  Application started. Press Ctrl+C to shut down.
+2024-01-07 21:46:39.547 +01:00  INF  Hosting environment: Development
+2024-01-07 21:46:39.548 +01:00  INF  Content root path: C:\Repos\Centrica\DataAccess\CentricaStoresApi
+2024-01-07 21:46:40.762 +01:00  INF  Request starting HTTP/2 GET https://localhost:7235/swagger/index.html - null null
+2024-01-07 21:46:41.157 +01:00  INF  Request finished HTTP/2 GET https://localhost:7235/swagger/index.html - 200 null text/html;charset=utf-8 420.7191ms
+2024-01-07 21:46:41.172 +01:00  INF  Request starting HTTP/2 GET https://localhost:7235/_framework/aspnetcore-browser-refresh.js - null null
+2024-01-07 21:46:41.187 +01:00  INF  Request finished HTTP/2 GET https://localhost:7235/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 15.4314ms
+2024-01-07 21:46:41.189 +01:00  INF  Request starting HTTP/2 GET https://localhost:7235/_vs/browserLink - null null
+2024-01-07 21:46:41.247 +01:00  INF  Request finished HTTP/2 GET https://localhost:7235/_vs/browserLink - 200 null text/javascript; charset=UTF-8 58.6531ms
+2024-01-07 21:46:41.324 +01:00  INF  Request starting HTTP/2 GET https://localhost:7235/swagger/v1/swagger.json - null null
+2024-01-07 21:46:41.515 +01:00  INF  Request finished HTTP/2 GET https://localhost:7235/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 192.1186ms
+2024-01-07 21:46:47.541 +01:00  INF  Request starting HTTP/2 GET https://localhost:7235/api/SalePerson/GetAll - null null
+2024-01-07 21:46:47.566 +01:00  INF  Executing endpoint 'CentricaStoresApi.Controllers.SalePersonController.GetAll (CentricaStoresApi)'
+2024-01-07 21:46:47.654 +01:00  INF  Route matched with {action = "GetAll", controller = "SalePerson"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] GetAll() on controller CentricaStoresApi.Controllers.SalePersonController (CentricaStoresApi).
+2024-01-07 21:46:51.936 +01:00  INF  GetAll started
+2024-01-07 21:46:52.963 +01:00  INF  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-01-07 21:46:53.002 +01:00  INF  Executed action CentricaStoresApi.Controllers.SalePersonController.GetAll (CentricaStoresApi) in 5337.222ms
+2024-01-07 21:46:53.007 +01:00  INF  Executed endpoint 'CentricaStoresApi.Controllers.SalePersonController.GetAll (CentricaStoresApi)'
+2024-01-07 21:46:53.010 +01:00  INF  Request finished HTTP/2 GET https://localhost:7235/api/SalePerson/GetAll - 200 null application/json; charset=utf-8 5469.8273ms
+2024-01-07 21:47:44.826 +01:00  INF  Request starting HTTP/2 GET https://localhost:7235/api/SalePerson/GetDetailsByDistrict/England - null null
+2024-01-07 21:47:44.843 +01:00  INF  Executing endpoint 'CentricaStoresApi.Controllers.SalePersonController.GetDetailsByDistrict (CentricaStoresApi)'
+2024-01-07 21:47:44.867 +01:00  INF  Route matched with {action = "GetDetailsByDistrict", controller = "SalePerson"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] GetDetailsByDistrict(System.String) on controller CentricaStoresApi.Controllers.SalePersonController (CentricaStoresApi).
+2024-01-07 21:47:44.939 +01:00  INF  GetDetailsByDistrict started
+2024-01-07 21:47:47.038 +01:00  INF  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CentricaStoresApi.Models.StorePersonDistrictModel, DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-07 21:47:47.040 +01:00  INF  Executed action CentricaStoresApi.Controllers.SalePersonController.GetDetailsByDistrict (CentricaStoresApi) in 2169.1367ms
+2024-01-07 21:47:47.043 +01:00  INF  Executed endpoint 'CentricaStoresApi.Controllers.SalePersonController.GetDetailsByDistrict (CentricaStoresApi)'
+2024-01-07 21:47:47.044 +01:00  INF  Request finished HTTP/2 GET https://localhost:7235/api/SalePerson/GetDetailsByDistrict/England - 200 null application/json; charset=utf-8 2220.4903ms
+2024-01-07 23:21:33.911 +01:00  INF  Now listening on: https://localhost:7235
+2024-01-07 23:21:34.225 +01:00  INF  Now listening on: http://localhost:5005
+2024-01-07 23:21:34.229 +01:00  INF  Application started. Press Ctrl+C to shut down.
+2024-01-07 23:21:34.230 +01:00  INF  Hosting environment: Development
+2024-01-07 23:21:34.231 +01:00  INF  Content root path: C:\Repos\Centrica\DataAccess\CentricaStoresApi
+2024-01-07 23:21:40.306 +01:00  INF  Request starting HTTP/2 GET https://localhost:7235/swagger/index.html - null null
+2024-01-07 23:21:40.988 +01:00  INF  Request finished HTTP/2 GET https://localhost:7235/swagger/index.html - 200 null text/html;charset=utf-8 713.4577ms
+2024-01-07 23:21:41.006 +01:00  INF  Request starting HTTP/2 GET https://localhost:7235/_framework/aspnetcore-browser-refresh.js - null null
+2024-01-07 23:21:41.020 +01:00  INF  Request finished HTTP/2 GET https://localhost:7235/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 12.5932ms
+2024-01-07 23:21:41.030 +01:00  INF  Request starting HTTP/2 GET https://localhost:7235/_vs/browserLink - null null
+2024-01-07 23:21:41.140 +01:00  INF  Request finished HTTP/2 GET https://localhost:7235/_vs/browserLink - 200 null text/javascript; charset=UTF-8 110.678ms
+2024-01-07 23:21:41.202 +01:00  INF  Request starting HTTP/2 GET https://localhost:7235/swagger/v1/swagger.json - null null
+2024-01-07 23:21:41.395 +01:00  INF  Request finished HTTP/2 GET https://localhost:7235/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 193.3631ms
+2024-01-07 23:24:40.594 +01:00  INF  Request starting HTTP/2 GET https://localhost:7235/api/SalePerson/Districts - null null
+2024-01-07 23:24:40.616 +01:00  INF  Executing endpoint 'CentricaStoresApi.Controllers.SalePersonController.GetAll (CentricaStoresApi)'
+2024-01-07 23:24:40.656 +01:00  INF  Route matched with {action = "GetAll", controller = "SalePerson"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] GetAll() on controller CentricaStoresApi.Controllers.SalePersonController (CentricaStoresApi).
+2024-01-07 23:24:44.014 +01:00  INF  GetAll started
+2024-01-07 23:24:44.764 +01:00  INF  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-01-07 23:24:44.778 +01:00  INF  Executed action CentricaStoresApi.Controllers.SalePersonController.GetAll (CentricaStoresApi) in 4112.5385ms
+2024-01-07 23:24:44.782 +01:00  INF  Executed endpoint 'CentricaStoresApi.Controllers.SalePersonController.GetAll (CentricaStoresApi)'
+2024-01-07 23:24:44.784 +01:00  INF  Request finished HTTP/2 GET https://localhost:7235/api/SalePerson/Districts - 200 null application/json; charset=utf-8 4190.9313ms
+2024-01-07 23:29:21.216 +01:00  INF  Now listening on: https://localhost:7235
+2024-01-07 23:29:21.248 +01:00  INF  Now listening on: http://localhost:5005
+2024-01-07 23:29:21.253 +01:00  INF  Application started. Press Ctrl+C to shut down.
+2024-01-07 23:29:21.254 +01:00  INF  Hosting environment: Development
+2024-01-07 23:29:21.255 +01:00  INF  Content root path: C:\Repos\Centrica\DataAccess\CentricaStoresApi
+2024-01-07 23:29:22.179 +01:00  INF  Request starting HTTP/2 GET https://localhost:7235/swagger/index.html - null null
+2024-01-07 23:29:22.565 +01:00  INF  Request finished HTTP/2 GET https://localhost:7235/swagger/index.html - 200 null text/html;charset=utf-8 399.1794ms
+2024-01-07 23:29:22.584 +01:00  INF  Request starting HTTP/2 GET https://localhost:7235/_framework/aspnetcore-browser-refresh.js - null null
+2024-01-07 23:29:22.603 +01:00  INF  Request finished HTTP/2 GET https://localhost:7235/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 18.4242ms
+2024-01-07 23:29:22.612 +01:00  INF  Request starting HTTP/2 GET https://localhost:7235/_vs/browserLink - null null
+2024-01-07 23:29:22.710 +01:00  INF  Request finished HTTP/2 GET https://localhost:7235/_vs/browserLink - 200 null text/javascript; charset=UTF-8 97.948ms
+2024-01-07 23:29:22.766 +01:00  INF  Request starting HTTP/2 GET https://localhost:7235/swagger/v1/swagger.json - null null
+2024-01-07 23:29:22.983 +01:00  INF  Request finished HTTP/2 GET https://localhost:7235/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 218.0386ms
+2024-01-07 23:30:00.795 +01:00  INF  Request starting HTTP/2 GET https://localhost:7235/api/SalePerson/Districts/Austria - null null
+2024-01-07 23:30:00.823 +01:00  INF  Executing endpoint 'CentricaStoresApi.Controllers.SalePersonController.GetDetailsByDistrict (CentricaStoresApi)'
+2024-01-07 23:30:00.883 +01:00  INF  Route matched with {action = "GetDetailsByDistrict", controller = "SalePerson"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] GetDetailsByDistrict(System.String) on controller CentricaStoresApi.Controllers.SalePersonController (CentricaStoresApi).
+2024-01-07 23:30:00.922 +01:00  INF  GetDetailsByDistrict started
+2024-01-07 23:30:04.776 +01:00  INF  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CentricaStoresApi.Models.StorePersonDistrictModel, DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-07 23:30:04.795 +01:00  INF  Executed action CentricaStoresApi.Controllers.SalePersonController.GetDetailsByDistrict (CentricaStoresApi) in 3906.0651ms
+2024-01-07 23:30:04.799 +01:00  INF  Executed endpoint 'CentricaStoresApi.Controllers.SalePersonController.GetDetailsByDistrict (CentricaStoresApi)'
+2024-01-07 23:30:04.802 +01:00  INF  Request finished HTTP/2 GET https://localhost:7235/api/SalePerson/Districts/Austria - 200 null application/json; charset=utf-8 4007.5215ms

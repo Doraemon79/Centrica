@@ -18,8 +18,8 @@ public class DistrictsRepo : IDistrictsRepo
     {
         using (var connection = this._context.CreateConnection())
         {
-            var tst = await _dataAccess.LoadData<string, dynamic>("Districts_GetAll", new { });
-            return tst;
+            return await _dataAccess.LoadData<string, dynamic>("Districts_GetAll", new { });
+     
         }
     }
 
@@ -27,9 +27,7 @@ public class DistrictsRepo : IDistrictsRepo
     {
         using (var connection = this._context.CreateConnection())
         {
-            var tst = await _dataAccess.LoadData<StorePersonDistrictModel, dynamic>("GetDetails_ByDistrict" , new { DistrictInput = district });
-  
-            return tst ;
+            return await _dataAccess.LoadData<StorePersonDistrictModel, dynamic>("GetDetails_ByDistrict" , new { DistrictInput = district });
         }
     }
 
@@ -47,7 +45,6 @@ public class DistrictsRepo : IDistrictsRepo
         using (var connection = this._context.CreateConnection())
         {
             await _dataAccess.SaveData("PrimarySaleperson_Update", new { SalePersonName = name, DistrictName = districtname });
-
         }
     }
 
@@ -56,7 +53,6 @@ public class DistrictsRepo : IDistrictsRepo
         using (var connection = this._context.CreateConnection())
         {
             await _dataAccess.SaveData("DeleteSalePerson", new { SalePersonName = name, DistrictName = districtname });
-
         }
     }
 

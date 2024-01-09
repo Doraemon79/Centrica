@@ -2,12 +2,22 @@
 using CentricaStoresApi.BudsinessLogic;
 using CentricaStoresApi.Data;
 using DataAccess.DbAccess;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
+// Add services to the container.
 builder.Services.AddControllers();
+
+var logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .Enrich.FromLogContext()
+    .CreateLogger();
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
+builder.Services.AddControllers();
+
 
 builder.Services.AddTransient<CentricaDbContext>();
 builder.Services.AddSingleton<IResultChecker,ResultChecker>();

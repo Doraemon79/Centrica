@@ -25,13 +25,9 @@ namespace CentricaShops.Command
         {
             var person = new DistrictAndSalePerson { name = _showDistrictViewModel.SalepersonToAdd, districtname = _showDistrictViewModel.SelectedDistrictTest };
 
-            var httpClient = _httpClientFactory.CreateClient();
-            httpClient.BaseAddress = new Uri(localHost);
-            var todoItemJson = new StringContent(JsonSerializer.Serialize(person),
-            Encoding.UTF8,
-            "application/json");
-                using var httpResponse =
-      await httpClient.DeleteAsync($"{localHost}/{person.districtname}/{person.name}");
+            var httpClient = _httpClientFactory.CreateClient("CentricaAPI");
+
+            using var httpResponse = await httpClient.DeleteAsync($"api/Remove/{person.districtname}/{person.name}");
 
             var result = await httpResponse.Content.ReadAsStringAsync();
             if (httpResponse.IsSuccessStatusCode)
@@ -41,7 +37,7 @@ namespace CentricaShops.Command
             }
             else
             {
-                throw new ConnectionException("Connection to" + localHost + " host failed", httpResponse.StatusCode.ToString());
+                throw new ConnectionException($"Connection to {httpResponse.Headers}  host failed", httpResponse.StatusCode.ToString());
             }
         }
     }

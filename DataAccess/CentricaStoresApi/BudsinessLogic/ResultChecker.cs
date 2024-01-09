@@ -6,13 +6,12 @@ public class ResultChecker: IResultChecker
 {
     public bool PresentInDistrict(IEnumerable<StorePersonDistrictModel> list, string name)
     {
-        var tst= list.Any(x => x.SalePerson.Equals(name));
-        return  tst;
+        return list.Any(x => x.SalePerson.Equals(name));
     }
 
     public bool SalePersonIsPrimary(IEnumerable<StorePersonDistrictModel> list, string name)
     {
-      return list.Where(x => x.SalePerson.Equals("name")).First().IsPrimary;
+      return list.Any(x => x.SalePerson.Equals("name") && x.IsPrimary) ;
     }
     
 }

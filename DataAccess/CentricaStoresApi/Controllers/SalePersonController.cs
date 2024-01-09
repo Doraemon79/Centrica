@@ -22,9 +22,10 @@ public class SalePersonController : ControllerBase
         _resultChecker = resultChecker;
     }
 
-    [HttpGet("GetAll")]
+    [HttpGet("Districts")]
     public async Task<ActionResult<string>> GetAll()
     {
+        _logger.LogInformation("GetAll started");
         var _list = await _districtRepo.GetAll();
         if (_list != null)
         {
@@ -36,10 +37,11 @@ public class SalePersonController : ControllerBase
         }
     }
 
-    [HttpGet("GetDetailsByDistrict/{district}")]
+    [HttpGet("Districts/{district}")]
     [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
     public async Task<ActionResult<string>> GetDetailsByDistrict([FromRoute] string district)
     {
+        _logger.LogInformation("GetDetailsByDistrict started");
         var _list = await _districtRepo.GetDetailsByDistrict(district);
         if (_list != null)
         {
@@ -51,11 +53,11 @@ public class SalePersonController : ControllerBase
         }
     }
 
-    [HttpPost("InsertSalePerson")]
+    [HttpPost("SalePerson/{districtname}/{name}")]
     [ProducesResponseType(StatusCodes.Status201Created)]
-    public async Task<ActionResult<string>> InsertSalePerson([FromBody] DistrictSalePerson districtSalePerson)
+    public async Task<ActionResult<string>> InsertSalePerson([FromRoute] DistrictSalePerson districtSalePerson)
     {
-
+        _logger.LogInformation("InsertSalePerson started");
         try
         {
             var _list = await _districtRepo.GetDetailsByDistrict(districtSalePerson.districtname);
@@ -77,11 +79,11 @@ public class SalePersonController : ControllerBase
 
     }
 
-    [HttpPut("UpdateSalePerson")]
+    [HttpPut("Update/{districtname}/{name}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult<string>> UpdateSalePerson([FromBody] DistrictSalePerson districtSalePerson)
+    public async Task<ActionResult<string>> UpdateSalePerson([FromRoute] DistrictSalePerson districtSalePerson)
     {
-
+        _logger.LogInformation("UpdateSalePerson started");
         try
         {
             await _districtRepo.UpdateSalePerson(districtSalePerson.name, districtSalePerson.districtname);
@@ -95,10 +97,11 @@ public class SalePersonController : ControllerBase
 
     }
 
-    [HttpDelete("DeleteSalePerson/{districtname}/{name}")]
+    [HttpDelete("Remove/{districtname}/{name}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult> DeleteSalePerson([FromRoute] DistrictSalePerson districtSalePerson)
     {
+        _logger.LogInformation("DeleteSalePerson started");
         try
         {
             var _list = await _districtRepo.GetDetailsByDistrict(districtSalePerson.districtname);

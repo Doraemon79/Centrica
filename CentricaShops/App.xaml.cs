@@ -25,12 +25,10 @@ namespace CentricaShops
                     services.AddSingleton<MainWindow>();
                     services.AddSingleton<MainViewModel>();
                     //services.AddTransient<ISalePersonProcessor, SalePersonProcessor>();
-                    services.AddSingleton<IDistrictsAndSalesPeopleService, DistrictsAndSalesPeopleService>();
                     services.AddHttpClient("CentricaAPI",
-                        client=>client.BaseAddress=new Uri("https://localhost:7235/api/SalePerson")
+                        httpClient => httpClient.BaseAddress=new Uri("https://localhost:7235/")
                         );
-                     
-                    services.AddSingleton((s) => new GeneralDistrict("Centrica Stores"));
+                    services.AddSingleton((s) => new GeneralDistrict("Centrica"));
                     services.AddSingleton(s => new MainWindow()
                     {
                         DataContext = s.GetRequiredService<MainViewModel>()

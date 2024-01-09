@@ -11,28 +11,15 @@ namespace CentricaShops.ViewModels
     public class ShowDistrictViewModel : ViewModelBase
     {
         private readonly ObservableCollection<string> _districts;
-        private ObservableCollection<StoreSalePerson> _storeSalePersons;
-
         public IEnumerable<string> Districts => _districts;
+        private ObservableCollection<StoreSalePerson> _storeSalePersons;
         public IEnumerable<StoreSalePerson> StoreSalePersons => _storeSalePersons;
 
+        
         private readonly IHttpClientFactory _httpClientFactory;
 
-
-        ObservableCollection<StoreAndDistrict> _storesAndDistricts;
-
-               
-
         private ObservableCollection<string> _stores;
-        //public IEnumerable<string> Districts => GetDistricts();
         public IEnumerable<string> SalePersonAndRole;
-        public string Districtname { get; }
-        public string Saleperson { get; }
-
-
-        public string Store { get; }
-
-        public string DistrictToShow { get; set; }
 
         private string userMessage;
 
@@ -78,7 +65,7 @@ namespace CentricaShops.ViewModels
             set
             {
                 isPrimary = value;
-
+                this.OnPropertyChanged("SelectedDistrictTest");
                 OnPropertyChanged(nameof(CanAddSalPerson));
                 OnPropertyChanged(nameof(CanUpdateSalePerson));
             }
@@ -125,7 +112,6 @@ namespace CentricaShops.ViewModels
             _districts = new ObservableCollection<string>();
             _storeSalePersons = new ObservableCollection<StoreSalePerson>();
             _stores = new ObservableCollection<string>();
-            _storesAndDistricts = new ObservableCollection<StoreAndDistrict>();
 
             _districts.Add("Test3");
             _districts.Add("Test4");
@@ -137,33 +123,8 @@ namespace CentricaShops.ViewModels
             GetDetailsCommand = new ShowSelectedDistrictCommand(this, clientFactory, generalDistrict);
             DeleteCommand = new DeleteCommand(this, clientFactory, generalDistrict);
 
-            //Test
-            //_districts.Add(new DistrictAndSalePerson("District1", "Mr1", true));
-            //_districts.Add(new DistrictAndSalePerson("District2", "Mr2", true));
-            //_districts.Add(new DistrictAndSalePerson("District3", "Mr3", true));
-            //_districts.Add(new DistrictAndSalePerson("District2", "Mr4", false));
-
-
-            //Test2
-            //_storesAndDistricts.Add(new StoreAndDistrict("Store1", "District1"));
-            //_storesAndDistricts.Add(new StoreAndDistrict("Store2", "District2"));
-            //_storesAndDistricts.Add(new StoreAndDistrict("Store3", "District3"));
-            //_storesAndDistricts.Add(new StoreAndDistrict("Store4", "District2"));
-
         }
 
-        private string _selectedDistrict;
-        //public string SelectedDistrict
-        //{
-        //    get { return _selectedDistrict; }
-        //    set
-        //    {
-
-        //        _selectedDistrict = value;
-        //        GetSalePersons(_selectedDistrict);
-
-        //    }
-        //}
 
 
         public ObservableCollection<string> Stores
@@ -210,104 +171,5 @@ namespace CentricaShops.ViewModels
             return _districts;
         }
 
-        //public void GetSalePersons(string district)
-        //{
-        //    SelectedDistrictTest = district;
-        //    var salePersonsAndRole = _districts.Where(x => x.District.Equals(district)).Select(x => x.salepersonAndRole);
-        //    SalePersons.Clear();
-        //    foreach (var el in salePersonsAndRole)
-        //    { SalePersons.Add(el); }
-
-
-        //    var stores = _storesAndDistricts.Where(x => x.District.Equals(district)).Select(x => x.Store);
-        //    Stores.Clear();
-        //    foreach (var el in stores)
-        //    { Stores.Add(el); }
-        //}
-
-        //public void ProcessSalePerson(string district, SalepersonAndRole salePerson)
-        //{
-        //    //If new person is Primary
-        //    //replace old primary with new saleperson
-        //    if (salePerson.IsPrimary)
-        //    {
-        //        ReplaceSalePerson(district, salePerson);
-        //    }
-
-        //    //if new person is secondary
-        //    else if (!salePerson.IsPrimary)
-        //    {
-        //        var oldSalePersonsAndRole = _districts.Where(x => x.District.Equals(district)).Select(x => x.salepersonAndRole);
-        //        //if new person is already present
-        //        if (oldSalePersonsAndRole != null)
-        //        {
-        //            //if present is primary 
-        //            if (oldSalePersonsAndRole.First().IsPrimary)
-        //            {
-        //                //exception need to replace the primary first
-        //                throw new SalePersonException("Need to replace Primary first", salePerson);
-
-        //            }
-        //            //If present is secondary 
-        //            //exception salePerson present already
-        //            else
-        //            {
-        //                throw new SalePersonException("Saleperson is present already", salePerson);
-        //            }
-
-        //        }
-        //        else
-        //        {
-        //            _salePersonProcessor.AddSalePerson(district, salePerson, _districts);
-        //        }
-
-        //    }
-
-
-
-            //If present is secondary 
-            //exception salePerson present already
-
-            //if new person is not present
-            //Add new person
-
-        //}
-
-        //public void AddSalePerson(string district, SalepersonAndRole salePerson, ObservableCollection<DistrictAndSalePerson> districts)
-        //{
-        //    var districtAndSalePerson = new DistrictAndSalePerson(district, salePerson.SalePerson, salePerson.IsPrimary);
-        //    _districts.Add(districtAndSalePerson);
-        //}
-        //public void ReplaceSalePerson(string district, SalepersonAndRole newSalePerson)
-        //{
-        //    int index = -1;
-        //    for (int i = 0; i < _districts.Count; i++)
-        //    {
-        //        if (_districts[i].District == district && _districts[i].salepersonAndRole.SalePerson == newSalePerson.SalePerson)
-        //        {
-        //            index = i;
-        //            break;
-        //        }
-        //    }
-        //    if (index > -1)
-        //    {
-        //        _districts[index].salepersonAndRole = newSalePerson;
-
-        //    }
-
-        //}
-        //public void RemoveSalePerson(string district, SalepersonAndRole salePerson)
-        //{
-        //    int index = -1;
-        //    for (int i = 0; i < _districts.Count; i++)
-        //    {
-        //        if (_districts[i].District == district && _districts[i].salepersonAndRole.IsPrimary)
-        //        {
-        //            index = i;
-        //            break;
-        //        }
-        //    }
-        //    _districts.RemoveAt(index);
-        //}
     }
 }

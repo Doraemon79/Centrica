@@ -81,13 +81,13 @@
             </ListView.View>
         </ListView>
         <TextBox x:Name="UserMessage" Grid.Column="2" HorizontalAlignment="Left" Height="44" Margin="41,396,0,0" TextWrapping="Wrap" Text="{Binding UserMessage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="362" />
-        <TextBox x:Name="bSaleperson" Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="191,298,0,0" TextWrapping="Wrap" Text="{Binding SalepersonToAdd}" VerticalAlignment="Top" Width="117" RenderTransformOrigin="0.614,-0.4"/>
-        <CheckBox x:Name="chIsPrimary" Grid.Column="2" Content="CheckBox" HorizontalAlignment="Left" Height="13" Margin="341,304,0,0" VerticalAlignment="Top" Width="26" IsChecked="{Binding IsPrimary}"/>
+        <TextBox x:Name="bSaleperson" Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="191,298,0,0" TextWrapping="Wrap" Text="{Binding SalepersonToAdd, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="117" RenderTransformOrigin="0.614,-0.4"/>
+        <CheckBox x:Name="chIsPrimary" Grid.Column="2" Content="Primary?" HorizontalAlignment="Left" Height="19" Margin="322,304,0,0" VerticalAlignment="Top" Width="87" IsChecked="{Binding IsPrimary}"/>
         <Button x:Name="Remove" Command="{Binding RemoveCommand}" Grid.Column="2" Content="Remove" HorizontalAlignment="Left" Height="28" Margin="41,344,0,0" VerticalAlignment="Top" Width="117" RenderTransformOrigin="1.722,-0.214"/>
         <Label x:Name="DistrictLabel" Background="AntiqueWhite" Grid.Column="2" Content="{Binding SelectedDistrictTest}" HorizontalAlignment="Left" Height="25" Margin="41,255,0,0" VerticalAlignment="Top" Width="94"  />
         <Button x:Name="bnAdd" Grid.Column="2"   Command="{Binding AddCommand}" Content="Add" HorizontalAlignment="Left" Margin="41,295,0,0" VerticalAlignment="Top" Width="117"/>
         <Button x:Name="bnGetDetails" Grid.Column="2" Command="{Binding GetDetailsCommand}" Content="Get Details" HorizontalAlignment="Left" Margin="191,252,0,0" VerticalAlignment="Top" Width="117"/>
-        <Button x:Name="bnUpdate" Grid.Column="2"   Command="{Binding UpdateCommand}" Content="Update" HorizontalAlignment="Left" Margin="372,292,0,0" VerticalAlignment="Top" Width="117"/>
+        <Button x:Name="bnUpdate" Grid.Column="2"   Command="{Binding UpdateCommand}" Content="Update" HorizontalAlignment="Left" Margin="436,295,0,0" VerticalAlignment="Top" Width="117" Height="28"/>
 
     </Grid>
 </UserControl>

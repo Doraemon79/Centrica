@@ -1,11 +1,8 @@
 ﻿using CentricaShops.Exceptions;
 using CentricaShops.Models;
 using CentricaShops.ViewModels;
-using System;
 using System.Net.Http;
 using System.Net.Http.Json;
-using System.Text;
-using System.Text.Json;
 
 namespace CentricaShops.Command
 {
@@ -13,13 +10,11 @@ namespace CentricaShops.Command
     {
         private readonly ShowDistrictViewModel _showDistrictViewModel;
         private readonly IHttpClientFactory _httpClientFactory;
-        private readonly GeneralDistrict _generalDistrict;
 
-        public ShowSelectedDistrictCommand(ShowDistrictViewModel showDistrictViewModel, IHttpClientFactory clientFactory, GeneralDistrict generalDistrict)
+        public ShowSelectedDistrictCommand(ShowDistrictViewModel showDistrictViewModel, IHttpClientFactory clientFactory)
         {
             _showDistrictViewModel = showDistrictViewModel;
             _httpClientFactory = clientFactory;
-            _generalDistrict = generalDistrict;
         }
         public async override void Execute(object? parameter)
         {

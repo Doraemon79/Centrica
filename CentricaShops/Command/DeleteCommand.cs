@@ -2,8 +2,6 @@
 using CentricaShops.Models;
 using CentricaShops.ViewModels;
 using System.Net.Http;
-using System.Text;
-using System.Text.Json;
 
 namespace CentricaShops.Command
 {
@@ -11,14 +9,11 @@ namespace CentricaShops.Command
     {
         private readonly ShowDistrictViewModel _showDistrictViewModel;
         private readonly IHttpClientFactory _httpClientFactory;
-        private readonly GeneralDistrict _generalDistrict;
-        string localHost = "https://localhost:7235/api/SalePerson/DeleteSalePerson";
 
-        public DeleteCommand(ShowDistrictViewModel showDistrictViewModel,IHttpClientFactory clientFactory, GeneralDistrict generalDistrict)
+        public DeleteCommand(ShowDistrictViewModel showDistrictViewModel, IHttpClientFactory clientFactory)
         {
             _showDistrictViewModel = showDistrictViewModel;
             _httpClientFactory = clientFactory;
-            _generalDistrict = generalDistrict;
         }
 
         public async override void Execute(object? parameter)

@@ -1,17 +1,13 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium.Appium.Windows;
-using OpenQA.Selenium.Appium;
 using System;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Remote;
-using static System.Collections.Specialized.BitVector32;
-using System.Linq;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace CentricaUI_Tests
 {
     [TestClass]
-    public class UnitTest1: TestSession
+    public class UnitTest1 : TestSession
     {
         private static WindowsElement listView;
         private static WindowsElement button;

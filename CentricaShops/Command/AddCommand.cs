@@ -1,5 +1,4 @@
-﻿using CentricaShops.Exceptions;
-using CentricaShops.Models;
+﻿using CentricaShops.Models;
 using CentricaShops.ViewModels;
 using System.ComponentModel;
 using System.Net.Http;
@@ -12,14 +11,12 @@ namespace CentricaShops.Command
     {
 
         private readonly ShowDistrictViewModel _showDistrictViewModel;
-        private readonly GeneralDistrict _generalDistrict;
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public AddCommand(ShowDistrictViewModel showDistrictViewModel, IHttpClientFactory clientFactory, GeneralDistrict generalDistrict)
+        public AddCommand(ShowDistrictViewModel showDistrictViewModel, IHttpClientFactory clientFactory )
         {
             _showDistrictViewModel = showDistrictViewModel;
             _httpClientFactory = clientFactory;
-            _generalDistrict = generalDistrict;
 
             _showDistrictViewModel.PropertyChanged += OnViewModelPropertyChanged;
         }
@@ -37,7 +34,7 @@ namespace CentricaShops.Command
         {
             return !string.IsNullOrEmpty(_showDistrictViewModel.SalepersonToAdd)
                 && !string.IsNullOrEmpty(_showDistrictViewModel.SelectedDistrictTest)
-                && _showDistrictViewModel.IsPrimary==false &&   base.CanExecute(parameter);
+                && _showDistrictViewModel.IsPrimary == false && base.CanExecute(parameter);
         }
 
         public async override void Execute(object? parameter)
@@ -57,7 +54,7 @@ namespace CentricaShops.Command
             }
             else
             {
-                _showDistrictViewModel.UserMessage= $"Connection to {httpResponse.Headers} host failed"+ httpResponse.StatusCode.ToString();
+                _showDistrictViewModel.UserMessage = $"Connection to {httpResponse.Headers} host failed" + httpResponse.StatusCode.ToString();
             }
         }
     }

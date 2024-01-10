@@ -1,7 +1,5 @@
 ﻿using CentricaShops.Models;
-using CentricaShops.Services;
 using CentricaShops.ViewModels;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Windows;
@@ -26,7 +24,7 @@ namespace CentricaShops
                     services.AddSingleton<MainViewModel>();
                     //services.AddTransient<ISalePersonProcessor, SalePersonProcessor>();
                     services.AddHttpClient("CentricaAPI",
-                        httpClient => httpClient.BaseAddress=new Uri("https://localhost:7235/")
+                        httpClient => httpClient.BaseAddress = new Uri("https://localhost:7235/")
                         );
                     services.AddSingleton((s) => new GeneralDistrict("Centrica"));
                     services.AddSingleton(s => new MainWindow()

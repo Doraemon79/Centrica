@@ -1,10 +1,5 @@
 ﻿using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Windows;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CentricaStore_Tests
 {
@@ -16,7 +11,7 @@ namespace CentricaStore_Tests
         protected static WindowsDriver<WindowsElement> session;
         public static WindowsDriver<WindowsElement> desktopSession;
 
-        public static void Setup( )
+        public static void Setup()
         {
             // Launch RadGridView test application if it is not yet launched 
             if (session == null || desktopSession == null)

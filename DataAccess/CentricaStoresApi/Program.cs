@@ -20,8 +20,8 @@ builder.Services.AddControllers();
 
 
 builder.Services.AddTransient<CentricaDbContext>();
-builder.Services.AddSingleton<IResultChecker,ResultChecker>();
-builder.Services.AddSingleton<IDistrictsRepo,DistrictsRepo>();
+builder.Services.AddSingleton<IResultChecker, ResultChecker>();
+builder.Services.AddSingleton<IDistrictsRepo, DistrictsRepo>();
 builder.Services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

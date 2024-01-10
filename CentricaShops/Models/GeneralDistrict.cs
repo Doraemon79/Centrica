@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Printing;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CentricaShops.Models
+﻿namespace CentricaShops.Models
 {
     public class GeneralDistrict
     {
@@ -15,7 +7,7 @@ namespace CentricaShops.Models
 
         public GeneralDistrict(string storesName)
         {
-            StoresName=storesName;
+            StoresName = storesName;
         }
 
     }

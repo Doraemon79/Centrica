@@ -1,8 +1,6 @@
 ﻿using CentricaShops.Command;
-using CentricaShops.Exceptions;
 using CentricaShops.Models;
 using System.Collections.ObjectModel;
-using System.ComponentModel.Design.Serialization;
 using System.Net.Http;
 using System.Windows.Input;
 
@@ -15,7 +13,7 @@ namespace CentricaShops.ViewModels
         private ObservableCollection<StoreSalePerson> _storeSalePersons;
         public IEnumerable<StoreSalePerson> StoreSalePersons => _storeSalePersons;
 
-        
+
         private readonly IHttpClientFactory _httpClientFactory;
 
         private ObservableCollection<string> _stores;
@@ -47,7 +45,7 @@ namespace CentricaShops.ViewModels
             }
             set
             {
-                salePersonToAdd = value; 
+                salePersonToAdd = value;
 
                 OnPropertyChanged(nameof(CanAddSalPerson));
                 OnPropertyChanged(nameof(CanUpdateSalePerson));
@@ -102,7 +100,6 @@ namespace CentricaShops.ViewModels
         public ICommand RefreshCommand { get; }
         public ICommand AddCommand { get; }
         public ICommand RemoveCommand { get; }
-
         public ICommand UpdateCommand { get; }
         public ICommand GetDetailsCommand { get; }
         public ICommand DeleteCommand { get; }
@@ -112,16 +109,15 @@ namespace CentricaShops.ViewModels
             _districts = new ObservableCollection<string>();
             _storeSalePersons = new ObservableCollection<StoreSalePerson>();
             _stores = new ObservableCollection<string>();
+            _httpClientFactory=clientFactory;
 
-            _districts.Add("Test3");
-            _districts.Add("Test4");
 
-            RefreshCommand = new RefreshDistrictsCommand(this, clientFactory, generalDistrict);
-            RemoveCommand = new DeleteCommand(this, clientFactory, generalDistrict);
-            AddCommand = new AddCommand(this, clientFactory, generalDistrict);
-            UpdateCommand = new UpdateSalePersonCommand(this, clientFactory, generalDistrict);
-            GetDetailsCommand = new ShowSelectedDistrictCommand(this, clientFactory, generalDistrict);
-            DeleteCommand = new DeleteCommand(this, clientFactory, generalDistrict);
+            RefreshCommand = new RefreshDistrictsCommand(this, _httpClientFactory);
+            RemoveCommand = new DeleteCommand(this, _httpClientFactory);
+            AddCommand = new AddCommand(this, _httpClientFactory);
+            UpdateCommand = new UpdateSalePersonCommand(this, _httpClientFactory);
+            GetDetailsCommand = new ShowSelectedDistrictCommand(this, _httpClientFactory);
+            DeleteCommand = new DeleteCommand(this, _httpClientFactory);
 
         }
 
@@ -163,8 +159,8 @@ namespace CentricaShops.ViewModels
 
         public IEnumerable<string> RefreshDistricts(IEnumerable<string> districts)
         {
-           _districts.Clear();
-            foreach(var el in  districts)
+            _districts.Clear();
+            foreach (var el in districts)
             {
                 _districts.Add(el);
             }

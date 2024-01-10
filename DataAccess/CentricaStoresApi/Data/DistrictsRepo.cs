@@ -1,6 +1,5 @@
 ﻿using CentricaStoresApi.Models;
 using DataAccess.DbAccess;
-using System.Linq;
 
 namespace CentricaStoresApi.Data;
 
@@ -19,7 +18,7 @@ public class DistrictsRepo : IDistrictsRepo
         using (var connection = this._context.CreateConnection())
         {
             return await _dataAccess.LoadData<string, dynamic>("Districts_GetAll", new { });
-     
+
         }
     }
 
@@ -27,7 +26,7 @@ public class DistrictsRepo : IDistrictsRepo
     {
         using (var connection = this._context.CreateConnection())
         {
-            return await _dataAccess.LoadData<StorePersonDistrictModel, dynamic>("GetDetails_ByDistrict" , new { DistrictInput = district });
+            return await _dataAccess.LoadData<StorePersonDistrictModel, dynamic>("GetDetails_ByDistrict", new { DistrictInput = district });
         }
     }
 
@@ -36,7 +35,7 @@ public class DistrictsRepo : IDistrictsRepo
         using (var connection = this._context.CreateConnection())
         {
             await _dataAccess.SaveData("InsertPerson_Secondary", new { SalePersonName = name, DistrictName = districtname });
-           
+
         }
     }
 

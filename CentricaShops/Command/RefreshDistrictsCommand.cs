@@ -1,28 +1,20 @@
 ﻿using CentricaShops.Exceptions;
 using CentricaShops.Models;
 using CentricaShops.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace CentricaShops.Command
 {
     public class RefreshDistrictsCommand : CommandBase
     {
         private readonly ShowDistrictViewModel _showDistrictViewModel;
-        private readonly GeneralDistrict _generalDistrict;
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public RefreshDistrictsCommand(ShowDistrictViewModel showDistrictViewModel, IHttpClientFactory clientFactory, GeneralDistrict generalDistrict)
+        public RefreshDistrictsCommand(ShowDistrictViewModel showDistrictViewModel, IHttpClientFactory clientFactory)
         {
-            _showDistrictViewModel=showDistrictViewModel;
-            _httpClientFactory=clientFactory;
-            _generalDistrict = generalDistrict;
+            _showDistrictViewModel = showDistrictViewModel;
+            _httpClientFactory = clientFactory;
         }
 
         public async override void Execute(object? parameter)

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CentricaStore_Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3df740c01bd00e352d6ef90ee4a15e3ff241cb67")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc095db6eba1be78b3526eaae3fd8822ff0a80b6")]
 [assembly: System.Reflection.AssemblyProductAttribute("CentricaStore_Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CentricaStore_Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

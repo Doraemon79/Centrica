@@ -1,15 +1,7 @@
 using CentricaShops.Models;
-using CentricaShops.Services;
 using CentricaShops.ViewModels;
-using Moq;
 using OpenQA.Selenium.Appium.Windows;
-using System;
 using System.Collections.ObjectModel;
-using System.Net.Http.Json;
-using System.Net;
-using System.Windows.Automation;
-using System.Windows.Controls;
-using Moq.Protected;
 
 namespace CentricaStore_Tests
 {
@@ -32,35 +24,35 @@ namespace CentricaStore_Tests
         [Fact]
         public void RefreshDistricts_ReturnsListOf3Elements()
         {
-        //    //Arrange
-        //    var districtsAndSalesPeopleServiceMock = new Mock<IDistrictsAndSalesPeopleService>();
-        //    var mockHandler = new Mock<HttpMessageHandler>(MockBehavior.Strict);
-        //    List<string> _districts = new List<string>();
-        //    _districts.Add("Test1");
-        //    _districts.Add("Test2");
-        //    _districts.Add("Test3");
+            //    //Arrange
+            //    var districtsAndSalesPeopleServiceMock = new Mock<IDistrictsAndSalesPeopleService>();
+            //    var mockHandler = new Mock<HttpMessageHandler>(MockBehavior.Strict);
+            //    List<string> _districts = new List<string>();
+            //    _districts.Add("Test1");
+            //    _districts.Add("Test2");
+            //    _districts.Add("Test3");
 
-        //    ////Act
-        //    var mockResponse = new HttpResponseMessage
-        //    {
-        //        StatusCode = HttpStatusCode.OK,
-        //        Content = JsonContent.Create<IEnumerable<string>>(_districts)
-        //    };
-        //    mockHandler
-        //.Protected()
-        //.Setup<Task<HttpResponseMessage>>(
-        //    "SendAsync",
-        //    ItExpr.Is<HttpRequestMessage>(m => m.Method == HttpMethod.Get),
-        //    ItExpr.IsAny<CancellationToken>())
-        //.ReturnsAsync(mockResponse);
+            //    ////Act
+            //    var mockResponse = new HttpResponseMessage
+            //    {
+            //        StatusCode = HttpStatusCode.OK,
+            //        Content = JsonContent.Create<IEnumerable<string>>(_districts)
+            //    };
+            //    mockHandler
+            //.Protected()
+            //.Setup<Task<HttpResponseMessage>>(
+            //    "SendAsync",
+            //    ItExpr.Is<HttpRequestMessage>(m => m.Method == HttpMethod.Get),
+            //    ItExpr.IsAny<CancellationToken>())
+            //.ReturnsAsync(mockResponse);
 
-        //    var httpClient = new HttpClient(mockHandler.Object);
+            //    var httpClient = new HttpClient(mockHandler.Object);
 
-        //    var sut = new DistrictsAndSalesPeopleService();
-        //    var result = sut.GetAllDistricts();
-        //    ////Assert
-        //    Assert.Equal(3, result.Result.Count());
-        //    //Assert.Equal("SalePersonTest", _districts.First().salepersonAndRole.SalePerson);
+            //    var sut = new DistrictsAndSalesPeopleService();
+            //    var result = sut.GetAllDistricts();
+            //    ////Assert
+            //    Assert.Equal(3, result.Result.Count());
+            //    //Assert.Equal("SalePersonTest", _districts.First().salepersonAndRole.SalePerson);
         }
 
         //[Fact]
@@ -90,6 +82,15 @@ namespace CentricaStore_Tests
 
             button = session.FindElementByAccessibilityId("bRefresh");
 
+        }
+
+        [Fact]
+        public void Test_Button()
+        {
+            button = session.FindElementByAccessibilityId("bRefresh");
+            button.Click();
+            button.SendKeys("Test4");
+            session.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5.5);
         }
 
         [Fact]

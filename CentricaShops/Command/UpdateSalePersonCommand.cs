@@ -1,29 +1,22 @@
 ﻿using CentricaShops.Exceptions;
 using CentricaShops.Models;
 using CentricaShops.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace CentricaShops.Command
 {
     public class UpdateSalePersonCommand : CommandBase
     {
         private readonly ShowDistrictViewModel _showDistrictViewModel;
-        private readonly GeneralDistrict _generalDistrict;
         private readonly IHttpClientFactory _httpClientFactory;
-        string localHost = "https://localhost:7235/api/SalePerson/InsertSalePerson";
 
-        public UpdateSalePersonCommand(ShowDistrictViewModel showDistrictViewModel, IHttpClientFactory clientFactory, GeneralDistrict generalDistrict)
+        public UpdateSalePersonCommand(ShowDistrictViewModel showDistrictViewModel, IHttpClientFactory clientFactory)
         {
             _showDistrictViewModel = showDistrictViewModel;
             _httpClientFactory = clientFactory;
-            _generalDistrict = generalDistrict;
 
             _showDistrictViewModel.PropertyChanged += OnViewModelPropertyChanged;
         }
@@ -53,10 +46,8 @@ namespace CentricaShops.Command
             Encoding.UTF8,
             "application/json");
 
-            var httpResponse = await httpClient.PutAsync($"/api/SalePerson/Update/{_showDistrictViewModel.SalepersonToAdd}/{_showDistrictViewModel.SelectedDistrictTest}", todoItemJson);
+            var httpResponse = await httpClient.PutAsync($"/api/SalePerson/Update/{_showDistrictViewModel.SelectedDistrictTest}/{_showDistrictViewModel.SalepersonToAdd}", todoItemJson);
 
-
-            var result = await httpResponse.Content.ReadAsStringAsync();
             if (httpResponse.IsSuccessStatusCode)
             {
                 _showDistrictViewModel.InsertPerson_Primary("The primary saleperson has been updated");

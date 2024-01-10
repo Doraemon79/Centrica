@@ -1,0 +1,13 @@
+C:\Repos\Centrica\DataAccess\DataAccess\bin\Release\net8.0\DataAccess.deps.json
+C:\Repos\Centrica\DataAccess\DataAccess\bin\Release\net8.0\DataAccess.dll
+C:\Repos\Centrica\DataAccess\DataAccess\bin\Release\net8.0\DataAccess.pdb
+C:\Repos\Centrica\DataAccess\DataAccess\obj\Release\net8.0\DataAccess.csproj.AssemblyReference.cache
+C:\Repos\Centrica\DataAccess\DataAccess\obj\Release\net8.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\Centrica\DataAccess\DataAccess\obj\Release\net8.0\DataAccess.AssemblyInfoInputs.cache
+C:\Repos\Centrica\DataAccess\DataAccess\obj\Release\net8.0\DataAccess.AssemblyInfo.cs
+C:\Repos\Centrica\DataAccess\DataAccess\obj\Release\net8.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Repos\Centrica\DataAccess\DataAccess\obj\Release\net8.0\DataAccess.sourcelink.json
+C:\Repos\Centrica\DataAccess\DataAccess\obj\Release\net8.0\DataAccess.dll
+C:\Repos\Centrica\DataAccess\DataAccess\obj\Release\net8.0\refint\DataAccess.dll
+C:\Repos\Centrica\DataAccess\DataAccess\obj\Release\net8.0\DataAccess.pdb
+C:\Repos\Centrica\DataAccess\DataAccess\obj\Release\net8.0\ref\DataAccess.dll

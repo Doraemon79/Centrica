@@ -3,13 +3,10 @@ using CentricaStoresApi.Controllers;
 using CentricaStoresApi.Data;
 using CentricaStoresApi.Models;
 using FluentAssertions;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Logging;
 using Moq;
 using System.Collections.ObjectModel;
-using System.Net;
 
 namespace API_test;
 
@@ -27,7 +24,7 @@ public class ApisTest
         ObservableCollection<string> _districts = new ObservableCollection<string>();
         _districts.Add("Test1");
         _districts.Add("Test2");
-  
+
         repositoryMock.Setup(r => r.GetAll())
         .Returns(Task.FromResult(_districts.AsEnumerable()));
         var controller = new SalePersonController(loggerMock.Object, repositoryMock.Object, resultCheckerMock.Object);
@@ -53,10 +50,10 @@ public class ApisTest
         var loggerMock = new Mock<ILogger<SalePersonController>>();
         var resultCheckerMock = new Mock<IResultChecker>();
         ObservableCollection<StorePersonDistrictModel> _districts = new ObservableCollection<StorePersonDistrictModel>();
-        
-        StorePersonDistrictModel test1= new StorePersonDistrictModel();
+
+        StorePersonDistrictModel test1 = new StorePersonDistrictModel();
         test1.DistrictName = "Test1";
-        test1.StoreName="Test";
+        test1.StoreName = "Test";
         test1.SalePerson = "TestPerson1";
         test1.IsPrimary = true;
 
@@ -112,10 +109,10 @@ public class ApisTest
         var controller = new SalePersonController(loggerMock.Object, repositoryMock.Object, resultCheckerMock.Object);
         repositoryMock.Setup(r => r.GetDetailsByDistrict("Austria")).Returns(Task.FromResult(_districts.AsEnumerable()));
         resultCheckerMock.Setup(r => r.PresentInDistrict(_districts, "Chuck Norris")).Returns(false);
- 
-         var districtPerson = new DistrictSalePerson() { districtname ="Test1", name="Chuck Norris"};
+
+        var districtPerson = new DistrictSalePerson() { districtname = "Test1", name = "Chuck Norris" };
         ////Act
-        
+
         var result = await controller.InsertSalePerson(districtPerson);
 
         //Assert
@@ -178,7 +175,7 @@ public class ApisTest
 
         var result = await controller.DeleteSalePerson(districtPerson);
         _districts.Remove(test2);
-      
+
         //Assert
         var okResult = Assert.IsType<OkResult>(result);
         okResult.StatusCode.Should().Be(200);

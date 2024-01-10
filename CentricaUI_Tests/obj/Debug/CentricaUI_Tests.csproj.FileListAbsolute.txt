@@ -25,6 +25,10 @@ C:\Repos\Centrica_Test\CentricaUI_Tests\obj\Debug\CentricaUI_Tests.csproj.CoreCo
 C:\Repos\Centrica_Test\CentricaUI_Tests\obj\Debug\CentricaUI_Tests.csproj.CopyComplete
 C:\Repos\Centrica_Test\CentricaUI_Tests\obj\Debug\CentricaUI_Tests.dll
 C:\Repos\Centrica_Test\CentricaUI_Tests\obj\Debug\CentricaUI_Tests.pdb
+C:\Repos\Centrica\CentricaUI_Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Repos\Centrica\CentricaUI_Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Repos\Centrica\CentricaUI_Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Repos\Centrica\CentricaUI_Tests\bin\Debug\Microsoft.TestPlatform.AdapterUtilities.dll
 C:\Repos\Centrica\CentricaUI_Tests\bin\Debug\CentricaUI_Tests.dll
 C:\Repos\Centrica\CentricaUI_Tests\bin\Debug\CentricaUI_Tests.pdb
 C:\Repos\Centrica\CentricaUI_Tests\bin\Debug\Appium.Net.dll
